@@ -1,0 +1,116 @@
+/* frontend/src/pages/Eisenhower.css */
+
+/* Definición de variables de color (Idealmente en App.css) */
+:root {
+    --color-eisenhower-rojo: #dc3545; /* Urgente/Importante */
+    --color-eisenhower-amarillo: #ffc107; /* Importante/No Urgente */
+    --color-eisenhower-azul: #007bff; /* Urgente/No Importante */
+    --color-eisenhower-verde: #28a745; /* Ni Urgente/Ni Importante */
+    --color-eisenhower-gris: #6c757d;
+}
+
+.eisenhower-page {
+    padding: 30px; 
+    max-width: 1400px;
+    margin: 0 auto; 
+}
+
+.eisenhower-description {
+    margin-bottom: 30px;
+    color: var(--color-texto-secundario);
+    font-style: italic;
+}
+
+.eisenhower-grid {
+    display: grid;
+    /* Limitamos el ancho total de la matriz y la centramos */
+    max-width: 950px; 
+    margin: 0 auto; 
+
+    /* La matriz es 2x2. Usamos 'auto' para que la altura se ajuste al contenido. */
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto; 
+    
+    /* Aumentamos el espacio entre cuadrantes para separarlos visualmente */
+    gap: 20px; 
+    
+    /* Altura mínima para asegurar una buena visualización inicial */
+    min-height: 600px; 
+}
+
+.eisenhower-quadrant {
+    /* Reducimos el padding interno para hacerlos más compactos */
+    padding: 15px;
+    border-radius: 12px;
+    color: white; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    background-clip: padding-box; 
+}
+
+.quadrant-title {
+    /* Reducimos el tamaño del título del cuadrante */
+    font-size: 1.2rem; 
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores de fondo específicos para cada cuadrante */
+.quadrant-urgente_importante {
+    background-color: var(--color-eisenhower-rojo);
+}
+.quadrant-importante_no_urgente {
+    background-color: var(--color-eisenhower-amarillo);
+    color: #333; /* Texto oscuro en fondo claro */
+}
+.quadrant-urgente_no_importante {
+    background-color: var(--color-eisenhower-azul);
+}
+.quadrant-ni_urgente_ni_importante {
+    background-color: var(--color-eisenhower-verde);
+}
+
+.quadrant-task-list {
+    flex-grow: 1;
+    overflow-y: auto; 
+    padding-right: 5px;
+}
+
+/* Ajustes de TaskItem dentro de la matriz */
+.quadrant-task-list .task-item {
+    background-color: rgba(255, 255, 255, 0.9); 
+    color: #333;
+    padding: 8px; /* Ajuste para hacer las tarjetas de tarea más pequeñas */
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.quadrant-task-list .task-item:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.quadrant-task-list .task-title {
+    font-weight: 600;
+    font-size: 0.9rem; /* Ajuste para reducir el tamaño de letra del título de la tarea */
+}
+
+.quadrant-task-list .task-actions {
+    display: none; 
+}
+
+.no-tasks {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+}
+.quadrant-importante_no_urgente .no-tasks {
+    color: rgba(0, 0, 0, 0.6);
+}

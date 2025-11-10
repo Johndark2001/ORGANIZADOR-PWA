@@ -1,0 +1,33 @@
+/* frontend/src/components/Layout.css */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--color-fondo-app);
+}
+
+/* El contenido principal debe tener un margen que compense el ancho del sidebar fijo */
+.main-content {
+    margin-left: 280px; /* Igual al 'width' del sidebar */
+    flex-grow: 1;
+    padding: 30px;
+    box-sizing: border-box;
+    /* Usamos el gradiente que especificaste para el fondo */
+    background: var(--color-fondo-main-content); 
+}
+
+.main-content-inner {
+    max-width: 1400px; /* Limita el ancho para pantallas muy grandes */
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Estilo para los títulos de las páginas */
+.page-header {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--color-texto-primario);
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 10px;
+}

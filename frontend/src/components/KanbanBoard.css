@@ -1,0 +1,82 @@
+/* frontend/src/components/KanbanBoard.css */
+
+.kanban-board-container {
+    padding: 20px 0;
+}
+
+.kanban-disclaimer {
+    background-color: #fff9e0; /* Amarillo suave */
+    border: 1px solid #ffe599;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #997404;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.kanban-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.kanban-column {
+    background-color: #f4f5f7; /* Fondo gris claro */
+    border-radius: 12px;
+    padding: 15px;
+    min-height: 500px; /* Altura mínima para arrastre */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.kanban-column h3 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Colores por estado */
+.kanban-column.status-pending h3 {
+    color: #dc3545; /* Rojo */
+    border-color: #f8d7da;
+}
+
+.kanban-column.status-in_progress h3 {
+    color: #ffc107; /* Amarillo */
+    border-color: #fff3cd;
+}
+
+.kanban-column.status-done h3 {
+    color: #28a745; /* Verde */
+    border-color: #d4edda;
+}
+
+/* Estilo para las tareas dentro del tablero */
+.kanban-column .task-item {
+    margin-bottom: 15px;
+    cursor: grab; /* Indica que es arrastrable */
+    border-left: 5px solid; /* Usamos el color de borde para indicar el estado */
+}
+
+.kanban-column .task-item:active {
+    cursor: grabbing;
+}
+
+.kanban-column.status-pending .task-item { border-color: #dc3545; }
+.kanban-column.status-in_progress .task-item { border-color: #ffc107; }
+.kanban-column.status-done .task-item { border-color: #28a745; }
+
+
+.empty-column-message {
+    text-align: center;
+    color: var(--color-texto-secundario);
+    padding: 30px 10px;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    margin-top: 20px;
+    background-color: #ffffff;
+}

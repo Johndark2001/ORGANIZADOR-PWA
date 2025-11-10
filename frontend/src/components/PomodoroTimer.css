@@ -1,0 +1,145 @@
+/* frontend/src/components/PomodoroTimer.css */
+
+.pomodoro-container {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Header y Botones de Modo --- */
+
+.pomodoro-header {
+    display: inline-flex;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.mode-button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-texto-primario);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.mode-button.active {
+    background-color: var(--color-primario-azul);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mode-button:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
+/* --- Display del Temporizador --- */
+
+.pomodoro-display {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 0 0 5px rgba(255, 255, 255, 0.8);
+    transition: background-color 0.5s;
+}
+
+.timer-text {
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores de fondo dinámicos */
+.pomodoro-display.work-time {
+    background-color: #dc3545; /* Rojo de enfoque */
+}
+.pomodoro-display.short-break {
+    background-color: #28a745; /* Verde de descanso corto */
+}
+.pomodoro-display.long-break {
+    background-color: #007bff; /* Azul de descanso largo */
+}
+
+/* --- Controles (Botones) --- */
+
+.pomodoro-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.control-button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    min-width: 150px;
+}
+
+.btn-start {
+    background-color: var(--color-pomodoro-iniciar); /* Verde */
+    color: white;
+}
+
+.btn-start:hover {
+    background-color: #218838;
+}
+
+.btn-pause {
+    background-color: #ffc107; /* Amarillo */
+    color: #333;
+}
+
+.btn-pause:hover {
+    background-color: #e0a800;
+}
+
+.btn-reset {
+    background-color: var(--color-pomodoro-reiniciar); /* Gris */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-reset:hover {
+    background-color: #5a6268;
+}
+
+.reset-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* --- Información --- */
+
+.pomodoro-info p {
+    font-size: 1rem;
+    color: var(--color-texto-secundario);
+    margin: 5px 0;
+}
+
+.pomodoro-info .cycle-count,
+.pomodoro-info .current-mode {
+    font-weight: 700;
+    color: var(--color-texto-primario);
+}

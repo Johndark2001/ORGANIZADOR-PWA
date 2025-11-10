@@ -1,0 +1,185 @@
+/* frontend/src/pages/Pomodoro.css */
+
+.pomodoro-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--color-fondo-app);
+    min-height: 80vh;
+}
+
+.productivity-stats {
+    font-size: 1.1rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 30px;
+}
+
+/* ------------------ Contenedor del Temporizador ------------------ */
+
+.timer-container {
+    width: 100%;
+    max-width: 550px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.5s;
+}
+
+/* El color de fondo del contenedor cambia ligeramente según el modo */
+.pomodoro-mode-work .timer-container {
+    background-color: var(--color-primario-azul-hover);
+}
+.pomodoro-mode-shortBreak .timer-container {
+    background-color: #f8f9fa;
+}
+.pomodoro-mode-longBreak .timer-container {
+    background-color: #28a745;
+}
+
+
+/* ------------------ Selector de Modo ------------------ */
+
+.timer-mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.timer-mode-selector button {
+    padding: 8px 15px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+.timer-mode-selector button.active,
+.timer-mode-selector button:hover {
+    background-color: white;
+    color: var(--color-primario-azul);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores de texto del selector para modo descanso/largo */
+.pomodoro-mode-shortBreak .timer-mode-selector button {
+    color: var(--color-texto-primario);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* ------------------ Display del Tiempo ------------------ */
+
+.timer-display {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mode-label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: white;
+}
+.pomodoro-mode-shortBreak .mode-label {
+    color: var(--color-texto-primario);
+}
+
+
+.time {
+    font-size: 8rem;
+    font-weight: 800;
+    letter-spacing: -5px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.pomodoro-mode-shortBreak .time {
+    color: var(--color-texto-primario);
+    text-shadow: none;
+}
+
+
+/* ------------------ Controles ------------------ */
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.timer-controls button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timer-controls .btn-primary {
+    background-color: var(--color-texto-primario);
+    color: white;
+}
+.timer-controls .btn-primary:hover {
+    background-color: #333;
+}
+
+.timer-controls .btn-secondary {
+    background-color: #f0f0f0;
+    color: var(--color-texto-secundario);
+}
+.timer-controls .btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* ------------------ Historial ------------------ */
+
+.session-history {
+    width: 100%;
+    max-width: 550px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.session-history h2 {
+    font-size: 1.4rem;
+    color: var(--color-primario-azul);
+    margin-bottom: 15px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    font-size: 0.95rem;
+}
+
+.history-item-work {
+    border-left: 5px solid var(--color-primario-azul);
+}
+.history-item-shortBreak, .history-item-longBreak {
+    border-left: 5px solid #28a745;
+}
+
+.history-item svg {
+    margin-right: 10px;
+    color: #28a745;
+}

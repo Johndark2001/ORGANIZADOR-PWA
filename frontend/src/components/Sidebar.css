@@ -1,0 +1,103 @@
+/* frontend/src/components/Sidebar.css */
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color-primario-azul);
+    color: var(--color-texto-sidebar);
+    padding: 20px 15px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Lo fijamos para que el contenido principal se desplace */
+    top: 0;
+    left: 0;
+}
+
+.sidebar-header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 20px;
+}
+
+.sidebar-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.username-text {
+    font-weight: 500;
+}
+
+.sidebar-nav {
+    flex-grow: 1; /* Permite que la navegación ocupe el espacio central */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-sidebar);
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-item.active {
+    background-color: var(--color-fondo-sidebar-activo); /* Azul más claro */
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.sidebar-footer {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logout-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--color-texto-sidebar);
+    cursor: pointer;
+    padding: 12px 15px;
+    margin-top: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.logout-button:hover {
+    background-color: #dc3545; /* Un toque rojo para el peligro */
+}

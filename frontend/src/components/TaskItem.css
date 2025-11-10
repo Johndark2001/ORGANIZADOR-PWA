@@ -1,0 +1,122 @@
+/* frontend/src/components/TaskItem.css */
+
+.task-item {
+    background-color: var(--color-fondo-secundario); /* Fondo blanco */
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-tarjeta);
+    margin-bottom: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    border-left: 5px solid transparent; /* Para el indicador de prioridad/estado */
+    overflow: hidden;
+}
+
+.task-item:hover {
+    transform: translateY(-2px); /* Efecto 3D sutil al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------- Encabezado (Título y Estado) ------------------- */
+
+.task-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.task-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-texto-primario);
+    flex-grow: 1; /* Permite que el título ocupe el espacio restante */
+    line-height: 1.3;
+}
+
+/* Tarea completada */
+.task-item.completed .task-title {
+    text-decoration: line-through;
+    color: var(--color-texto-secundario);
+}
+
+/* Iconos de estado */
+.task-status-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pending-icon {
+    color: var(--color-borde);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.pending-icon:hover {
+    color: var(--color-primario-azul);
+}
+
+.completed-icon {
+    color: var(--color-eisenhower-verde); /* Verde para completado */
+    font-size: 1.1rem;
+}
+
+.task-options-btn {
+    background: none;
+    border: none;
+    color: var(--color-texto-secundario);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+/* ------------------- Detalles (Fecha y Categoría) ------------------- */
+
+.task-details {
+    display: flex;
+    gap: 15px;
+    margin-left: 30px; /* Alinea los detalles con el texto del título */
+    font-size: 0.85rem;
+    color: var(--color-texto-secundario);
+}
+
+.task-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon-clock, .icon-tag {
+    font-size: 0.9rem;
+    color: var(--color-primario-azul);
+}
+
+/* ------------------- Indicador de Prioridad (Barra Lateral) ------------------- */
+
+.task-priority-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5px;
+}
+
+/* Usamos los colores de la matriz de Eisenhower para la prioridad */
+.priority-high { /* Urgente e Importante */
+    background-color: var(--color-eisenhower-rojo);
+}
+
+.priority-medium { /* Importante pero No Urgente o Urgente pero No Importante */
+    background-color: var(--color-eisenhower-amarillo);
+}
+
+.priority-low { /* Ni Urgente ni Importante */
+    background-color: var(--color-eisenhower-verde);
+}

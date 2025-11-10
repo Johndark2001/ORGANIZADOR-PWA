@@ -1,0 +1,103 @@
+/* frontend/src/App.css */
+
+/* Variables de Color (Esquema Claro) - CONSOLIDADO */
+:root {
+    /* Colores primarios y de acción */
+    --color-primario-azul: #0a58d0; 
+    --color-primario-azul-hover: #0d6efd;
+    --color-primario-azul-claro: #eff6ff; 
+
+    /* Colores de fondo y estructura */
+    --color-fondo-principal: #e0f2fe; /* Fondo AZUL CLARO para AuthPage */
+    --color-fondo-general: #f8f9fa; /* Fondo general gris muy claro para el resto de la App */
+    --color-fondo-secundario: #ffffff; 
+    --color-fondo-sidebar: #ffffff; 
+    --color-fondo-claro: #bfdbfe; 
+
+    /* Colores de texto */
+    --color-texto-primario: #212529; 
+    --color-texto-secundario: #6c757d; 
+    --color-texto-contraste: #ffffff; 
+    --color-texto-sidebar: #ffffff;
+    --color-texto-sidebar-activo: #ffffff;
+    --color-fondo-sidebar-activo: #0d6efd;
+
+    /* Matriz Eisenhower/Estado */
+    --color-eisenhower-rojo: #ef4444; 
+    --color-eisenhower-rojo-claro: #fee2e2;
+    --color-eisenhower-amarillo: #f59e0b;
+    --color-eisenhower-amarillo-claro: #fef3c7;
+    --color-eisenhower-verde: #10b981;
+    --color-eisenhower-verde-claro: #d1fae5;
+    
+    /* Variables para las burbujas */
+    --bubble-color-1: rgba(59, 130, 246, 0.08); 
+    --bubble-color-2: rgba(147, 197, 253, 0.08);
+
+    /* Gradientes */
+    --gradiente-pendiente: linear-gradient(135deg, #fecaa2 0%, #ff8c8c 100%);
+    --gradiente-en-curso: linear-gradient(135deg, #a2c4ff 0%, #6d88fc 100%);
+    --gradiente-hecho: linear-gradient(135deg, #b0f7b0 0%, #68e09f 100%);
+
+    /* Otros */
+    --color-borde: #dee2e6;
+    --sombra-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Base de la Aplicación */
+html, body, #root { 
+    /* RESET AGRESIVO: Esto elimina márgenes y rellenos por defecto */
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+    /* Forzamos el color de fondo general de la aplicación */
+    background-color: var(--color-fondo-general) !important; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Inter', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-texto-primario);
+    min-height: 100vh;
+    /* CLAVE: Ocultamos el scroll para que el 100vw se calcule correctamente */
+    overflow: hidden; 
+}
+
+#root {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* Estilos de Botones Generales */
+.btn-primary, .auth-submit-btn {
+    background-color: var(--color-primario-azul);
+    color: var(--color-texto-contraste);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover, .auth-submit-btn:hover {
+    background-color: var(--color-primario-azul-hover);
+}
+
+.btn-primary:active, .auth-submit-btn:active {
+    transform: scale(0.98);
+}
+
+.loading-app-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
+}

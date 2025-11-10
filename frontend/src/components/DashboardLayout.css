@@ -1,0 +1,186 @@
+/* frontend/src/components/DashboardLayout.css */
+
+.dashboard-container {
+    display: flex; /* CRÍTICO: Usa Flexbox para dividir el espacio */
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--color-fondo-principal);
+}
+
+/* ------------------- SIDEBAR ------------------- */
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: var(--color-fondo-sidebar); 
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); 
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.sidebar-header {
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid var(--color-fondo-claro);
+    margin-bottom: 10px;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primario-azul);
+    margin: 0;
+}
+
+/* Información del Usuario */
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin: 0 10px 20px 10px; 
+    border-radius: 8px;
+    background-color: var(--color-fondo-claro);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primario-azul-claro);
+    color: var(--color-primario-azul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.user-details h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-texto-primario);
+}
+
+.user-details p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--color-eisenhower-verde);
+    font-weight: 500;
+}
+
+
+/* ------------------- NAVEGACION ------------------- */
+
+.nav-links {
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+.nav-link-item {
+    display: block;
+    text-decoration: none;
+    color: var(--color-texto-primario);
+    padding: 12px 20px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.nav-link-item svg {
+    font-size: 1.1rem;
+    color: var(--color-texto-secundario);
+}
+
+/* Efecto Hover */
+.nav-link-item:hover {
+    background-color: var(--color-fondo-claro);
+    color: var(--color-primario-azul);
+}
+
+.nav-link-item:hover svg {
+    color: var(--color-primario-azul);
+}
+
+
+/* Enlace Activo (Seleccionado) */
+.nav-link-item.active {
+    background-color: var(--color-primario-azul);
+    color: var(--color-texto-contraste);
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.nav-link-item.active svg {
+    color: var(--color-texto-contraste);
+}
+
+
+/* ------------------- PIE DE PAGINA (SALIR) ------------------- */
+
+.sidebar-footer {
+    padding: 10px 20px 0 20px;
+    border-top: 1px solid var(--color-fondo-claro);
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-eisenhower-rojo);
+    color: var(--color-texto-contraste);
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #dc2626;
+}
+
+/* ------------------- CONTENIDO PRINCIPAL ------------------- */
+
+.dashboard-content {
+    flex-grow: 1; /* CRÍTICO: Permite que el contenido ocupe el espacio restante */
+    padding: 30px;
+    overflow-y: auto;
+    background-color: var(--color-fondo-principal);
+}
+
+/* Media Query para responsividad (opcional) */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 60px;
+        min-width: 60px;
+    }
+    .sidebar-header, .user-info, .sidebar-footer {
+        padding: 10px;
+        text-align: center;
+    }
+    .app-title, .user-details {
+        display: none;
+    }
+    .nav-link-item {
+        justify-content: center;
+        padding: 12px 0;
+    }
+    .nav-link-item span {
+        display: none;
+    }
+    .nav-link-item svg {
+        margin-right: 0;
+    }
+}

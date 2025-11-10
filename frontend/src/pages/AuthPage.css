@@ -1,0 +1,179 @@
+/* frontend/src/pages/AuthPage.css */
+
+.auth-container {
+    /* 🔑 CLAVE: Centrado con Flexbox en un contenedor 100vw/100vh */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    
+    width: 100vw;   
+    height: 100vh; 
+    
+    margin: 0; 
+    padding: 0; 
+
+    /* FONDO AZUL CLARO */
+    background-color: var(--color-fondo-principal) !important; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.auth-form-box {
+    width: 90%; 
+    max-width: 400px;
+    padding: 30px 40px;
+    background-color: var(--color-fondo-secundario); 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    z-index: 10; 
+    position: relative;
+    margin: 0; 
+}
+
+.auth-header {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primario-azul);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.auth-subtitle {
+    font-size: 1rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* ------------------- Formulario ------------------- */
+
+.auth-form .form-group {
+    margin-bottom: 18px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-texto-primario);
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    color: var(--color-texto-primario);
+    background-color: var(--color-fondo-secundario);
+}
+
+.auth-form input:focus {
+    border-color: var(--color-primario-azul);
+    box-shadow: 0 0 0 3px var(--color-primario-azul-claro);
+    outline: none;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ------------------- Errores y Pie de página ------------------- */
+
+.error-message {
+    background-color: var(--color-eisenhower-rojo-claro);
+    color: var(--color-eisenhower-rojo);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: var(--color-texto-secundario);
+}
+
+.auth-footer a {
+    color: var(--color-primario-azul);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------- Animación de Burbujas ------------------- */
+
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    background-color: transparent !important; 
+}
+
+.bubble {
+    position: absolute;
+    background-color: var(--bubble-color-1); 
+    border-radius: 50%;
+    opacity: 0.8; 
+    animation: floatUp 15s infinite ease-in; 
+}
+
+/* Variaciones de tamaño y color para las burbujas */
+.bubble:nth-child(2n) {
+    background-color: var(--bubble-color-2); 
+    animation-duration: 20s;
+    animation-delay: 2s;
+}
+.bubble:nth-child(3n) {
+    animation-duration: 18s;
+    animation-delay: 4s;
+}
+.bubble:nth-child(4n) {
+    background-color: var(--bubble-color-2);
+    animation-duration: 22s;
+    animation-delay: 6s;
+}
+.bubble:nth-child(5n) {
+    animation-duration: 17s;
+    animation-delay: 1s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8; 
+        transform: translateY(90vh) scale(0.5); 
+    }
+    90% {
+        opacity: 0.4; 
+        transform: translateY(-10vh) scale(1.8); 
+    }
+    100% {
+        transform: translateY(-20vh) scale(2); 
+        opacity: 0;
+    }
+}

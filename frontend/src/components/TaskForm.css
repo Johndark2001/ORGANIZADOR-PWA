@@ -1,0 +1,103 @@
+/* frontend/src/components/TaskForm.css */
+
+.task-form {
+    padding: 0;
+}
+
+.task-form h2 {
+    font-size: 1.3rem;
+    color: var(--color-primario-azul);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--color-texto-primario);
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-error {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ff9999;
+}
+
+/* Selección de Etiquetas */
+.tag-selection .tag-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.tag-option {
+    display: flex;
+    align-items: center;
+    background-color: #eef;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.tag-option input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.no-tags-message {
+    font-style: italic;
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.task-submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}

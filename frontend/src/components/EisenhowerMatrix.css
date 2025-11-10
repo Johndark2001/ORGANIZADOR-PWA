@@ -1,0 +1,83 @@
+/* frontend/src/components/EisenhowerMatrix.css */
+
+.eisenhower-matrix-container {
+    padding: 20px 0;
+}
+
+.matrix-disclaimer {
+    background-color: #e6f7ff; /* Azul suave */
+    border: 1px solid #91d5ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #0050b3;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    height: 90vh; /* Ajusta la altura del contenedor principal */
+}
+
+.eisenhower-quadrant {
+    border-radius: 12px;
+    padding: 15px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Colores de fondo de los cuadrantes (definidos en index.css) */
+.quadrant-urgente_importante { background-color: var(--color-eisenhower-1); }
+.quadrant-importante_no_urgente { background-color: var(--color-eisenhower-2); }
+.quadrant-urgente_no_importante { background-color: var(--color-eisenhower-3); }
+.quadrant-ni_urgente_ni_importante { background-color: var(--color-eisenhower-4); }
+
+
+.eisenhower-quadrant h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 5px;
+    color: var(--color-texto-primario);
+}
+
+.quadrant-description {
+    font-size: 0.85rem;
+    color: var(--color-texto-secundario);
+    margin: 5px 0 15px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+.quadrant-body {
+    flex-grow: 1;
+    overflow-y: auto; /* Scroll dentro del cuadrante */
+    padding-right: 5px; /* Espacio para la barra de scroll */
+}
+
+/* Tarea individual dentro de la matriz */
+.eisenhower-quadrant .task-item {
+    margin-bottom: 10px;
+    cursor: grab;
+    /* Sobrescribir el estilo de borde izquierdo con el color del cuadrante */
+    border-left: 5px solid; 
+    border-color: inherit; /* Hereda el color del fondo del cuadrante para un borde más sutil */
+}
+
+.empty-quadrant-message {
+    text-align: center;
+    color: var(--color-texto-secundario);
+    padding: 20px 10px;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}

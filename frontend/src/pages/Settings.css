@@ -1,0 +1,156 @@
+/* frontend/src/pages/Settings.css */
+
+.settings-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.settings-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.settings-section h3 {
+    font-size: 1.5rem;
+    color: var(--color-primario-azul);
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ------------------ Sección de Usuario ------------------ */
+
+.user-details p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.logout-btn {
+    margin-top: 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* ------------------ Gestión de Etiquetas ------------------ */
+
+.tag-creation-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tag-creation-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.tag-list {
+    margin-top: 20px;
+}
+
+.tag-list h4 {
+    font-size: 1.1rem;
+    color: var(--color-texto-primario);
+    margin-bottom: 10px;
+}
+
+.tag-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+}
+
+.tag-name {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag-item .check-icon {
+    color: var(--color-eisenhower-verde);
+}
+
+.btn-delete-tag {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.btn-delete-tag:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.error-message {
+    color: #dc3545;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.no-tags-msg {
+    font-style: italic;
+    color: var(--color-texto-secundario);
+}
+
+
+/* ------------------ Configuración de Pomodoro ------------------ */
+
+.pomodoro-settings .setting-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 5px 0;
+}
+
+.pomodoro-settings .setting-control label {
+    font-weight: 500;
+}
+
+.pomodoro-settings .setting-control input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.pomodoro-settings .save-btn {
+    margin-top: 10px;
+    background-color: var(--color-primario-azul);
+    transition: background-color 0.2s;
+}
+.pomodoro-settings .save-btn:hover:not(.saved) {
+    background-color: var(--color-primario-azul-hover);
+}
+
+.pomodoro-settings .save-btn.saved {
+    background-color: var(--color-eisenhower-verde);
+    pointer-events: none; /* Desactivar después de guardar */
+}
