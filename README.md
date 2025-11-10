@@ -43,7 +43,7 @@ ___
 
 - python app.py
 ___
-
+___
 
 ⚠️ El servidor Flask iniciará normalmente en http://127.0.0.1:5000
 (puedes modificar el puerto en app.py si lo deseas).
@@ -70,3 +70,14 @@ ___
 🔗 Por defecto, la aplicación React se ejecutará en http://localhost:5173 (o un puerto disponible).
 ___
 ___
+
+
+## 🔧 Ejecución conjunta
+
+### Para que la aplicación funcione correctamente:
+
+- Inicia primero el backend con python app.py.
+
+- Luego, en otra terminal, inicia el frontend con npm run dev.
+
+- El frontend se comunicará con el backend mediante las rutas definidas en Flask.
