@@ -74,7 +74,7 @@ ___
 ## 🔗 Por defecto, la aplicación React se ejecutará en http://localhost:5173 (o un puerto disponible).
 
 
-# NOTA: Para que el codigo corra correctamente, primero en una consula ejecutar el backend y luego en otra consola el frontend en ese orden, luego abrir el link que te aparece en el frontend: http://localhost:5173
+## NOTA: Para que el codigo corra correctamente, primero en una consola ejecutar el backend y luego en otra consola el frontend en ese orden, luego abrir el link que te aparece en el frontend: http://localhost:5173
 ___
 ___
 
