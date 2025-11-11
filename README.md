@@ -67,17 +67,17 @@ ___
 - npm run dev
 ___
 ___
-# 🔗 Por defecto, la aplicación React se ejecutará en http://localhost:5173 (o un puerto disponible).
+## 🔗 Por defecto, la aplicación React se ejecutará en http://localhost:5173 (o un puerto disponible).
 ___
 ___
 
 
-## 🔧 Ejecución conjunta
+# 🔧 Ejecución conjunta
 
-### Para que la aplicación funcione correctamente:
+# Para que la aplicación funcione correctamente:
 
-- Inicia primero el backend con python app.py.
+## - Inicia primero el backend con python app.py.
 
-- Luego, en otra terminal, inicia el frontend con npm run dev.
+## - Luego, en otra terminal, inicia el frontend con npm run dev.
 
-- El frontend se comunicará con el backend mediante las rutas definidas en Flask.
+## - El frontend se comunicará con el backend mediante las rutas definidas en Flask.
