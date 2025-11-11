@@ -1,3 +1,7 @@
+# PASOS PARA EJECUTAR EL CODIGO CORRECTAMENTE, SEGUIR LA GUIA A CONTINUACIÓN
+
+
+
 # 🚀 **Clonación del repositorio**
 
 
