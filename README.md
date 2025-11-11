@@ -67,7 +67,7 @@ ___
 - npm run dev
 ___
 ___
-🔗 Por defecto, la aplicación React se ejecutará en http://localhost:5173 (o un puerto disponible).
+# 🔗 Por defecto, la aplicación React se ejecutará en http://localhost:5173 (o un puerto disponible).
 ___
 ___
 
